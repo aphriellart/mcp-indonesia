@@ -12,7 +12,7 @@ jobs:
           python-version: "3.12"
       - name: Check tag matches package version
         run: |
-          v=$(grep -Po '__version__ = "\K[^"]+' src/*/__init__.py)
+          v=$(python -c "import re,glob; print(re.search(r'__version__ = \"(.+?)\"', open(glob.glob('src/*/__init__.py')[0]).read())[1])")
           test "v$v" = "$GITHUB_REF_NAME" || { echo "tag $GITHUB_REF_NAME != version $v"; exit 1; }
       - run: pip install build
       - run: python -m build
