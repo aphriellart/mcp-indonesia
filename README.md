@@ -19,8 +19,8 @@
 All tools are read-only and run **locally**; no data leaves your machine.
 
 Built on two standalone libraries from the same family:
-- [`alamat-id`](../alamat-id): Indonesian address parser
-- [`mutasi-bank`](../mutasi-bank): Indonesian bank statement parser
+- [`alamat-id`](https://github.com/Aphriellart/alamat-id): Indonesian address parser
+- [`mutasi-bank`](https://github.com/Aphriellart/mutasi-bank): Indonesian bank statement parser
 
 ## Install
 

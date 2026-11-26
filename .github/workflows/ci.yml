@@ -8,5 +8,6 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+      - run: pip install git+https://github.com/Aphriellart/alamat-id git+https://github.com/Aphriellart/mutasi-bank
       - run: pip install -e ".[dev]"
       - run: pytest -q

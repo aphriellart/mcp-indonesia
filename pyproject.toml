@@ -24,6 +24,10 @@ dev = ["pytest>=7"]
 [project.scripts]
 mcp-indonesia = "mcp_indonesia.server:main"
 
+[project.urls]
+Homepage = "https://github.com/Aphriellart/mcp-indonesia"
+Issues = "https://github.com/Aphriellart/mcp-indonesia/issues"
+
 [tool.hatch.version]
 path = "src/mcp_indonesia/__init__.py"
 
