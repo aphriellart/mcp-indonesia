@@ -1,0 +1,34 @@
+[build-system]
+requires = ["hatchling>=1.18"]
+build-backend = "hatchling.build"
+
+[project]
+name = "mcp-indonesia"
+dynamic = ["version"]
+description = "MCP server for Indonesian data: addresses & Kemendagri region codes, bank statements, NIK, phone numbers, terbilang."
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.10"
+authors = [{ name = "mcp-indonesia contributors" }]
+keywords = ["mcp", "model context protocol", "claude", "indonesia", "alamat", "mutasi", "nik", "terbilang"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Natural Language :: Indonesian",
+  "Programming Language :: Python :: 3",
+]
+dependencies = ["mcp>=2.0", "alamat-id>=0.1", "mutasi-bank>=0.1"]
+
+[project.optional-dependencies]
+dev = ["pytest>=7"]
+
+[project.scripts]
+mcp-indonesia = "mcp_indonesia.server:main"
+
+[tool.hatch.version]
+path = "src/mcp_indonesia/__init__.py"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/mcp_indonesia"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
